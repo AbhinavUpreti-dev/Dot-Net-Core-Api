@@ -2546,9 +2546,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abhinavupreti\\source\\repos\\WebApplication1\\OrderAPI\\OrderAPI.csproj",
-      "projectName": "OrderAPI",
-      "projectPath": "C:\\Users\\abhinavupreti\\source\\repos\\WebApplication1\\OrderAPI\\OrderAPI.csproj",
+      "projectUniqueName": "C:\\Users\\abhinavupreti\\source\\repos\\WebApplication1\\OrderAPI\\ItemsApi.csproj",
+      "projectName": "ItemsApi",
+      "projectPath": "C:\\Users\\abhinavupreti\\source\\repos\\WebApplication1\\OrderAPI\\ItemsApi.csproj",
       "packagesPath": "C:\\Users\\abhinavupreti\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\abhinavupreti\\source\\repos\\WebApplication1\\OrderAPI\\obj\\",
       "projectStyle": "PackageReference",
