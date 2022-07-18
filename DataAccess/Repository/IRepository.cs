@@ -10,5 +10,7 @@ namespace DataAccess.Repository
     public interface IRepository
     {
         IEnumerable<ItemModel> GetAllOrders();
+        void AddItems(ItemModel itemModels);
+        Task<bool> SaveChangesAsync();
     }
 }

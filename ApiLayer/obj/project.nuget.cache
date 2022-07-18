@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yWlsuEaYPo63dbSiB9NS1wK2yYr8ZxTVQfLH8XWoPukR9qhqi7rnrUIqxoHcNBE1yLmKhc9TF+SSfGpLW5X6eA==",
+  "dgSpecHash": "iTu+AriA0qI3E1bbsUxkQ+m/JtsptfRnzOjIB8W/lhGj5Y3YHroR29GRYRJMS6bGH6I8v7I1Q/4WPshrV/+VOA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\abhinavupreti\\source\\repos\\WebApplication1\\OrderAPI\\ItemsApi.csproj",
+  "projectFilePath": "C:\\Users\\abhinavupreti\\source\\repos\\WebApplication1\\ApiLayer\\ItemsApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abhinavupreti\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\abhinavupreti\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",

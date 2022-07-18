@@ -1,4 +1,6 @@
-﻿using DataAccess.Model;
+﻿using AutoMapper;
+using DataAccess.Entity;
+using DataAccess.Model;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,13 +13,16 @@ namespace OrderAPI.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IRepository repository;
+        private readonly IMapper mapper;
 
-        public OrderController(IRepository repository)
+        public OrderController(IRepository repository, IMapper _mapper)
         {
             this.repository = repository;
+            mapper = _mapper;
         }
         // GET: api/<OrderController>
         [HttpGet]
+        [Route("Items",Name ="GetAllItems")]
         public IEnumerable<ItemModel> Get()
         {
             return repository.GetAllOrders();
@@ -32,14 +37,39 @@ namespace OrderAPI.Controllers
 
         // POST api/<OrderController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Post([FromBody] ItemModel itemModel)
         {
+           var item = mapper.Map<ItemModel>(itemModel);
+            repository.AddItems(item);
+            if(await repository.SaveChangesAsync())
+            {
+                var newModel = mapper.Map<ItemModel>(item);
+                return CreatedAtRoute("GetAllItems", newModel);
+            }
+            return BadRequest();
         }
 
         // PUT api/<OrderController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromBody] ItemModel itemModel)
         {
+            try
+            {
+                var currentItem = mapper.Map<Item>(repository.GetAllOrders().Where(i => i.Id == id).FirstOrDefault());
+                currentItem.Quantity = itemModel.Quantity;
+                currentItem.Name = itemModel.Name;
+                if (await repository.SaveChangesAsync())
+                {
+                    return Ok(itemModel);
+                }
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest();
+            }
+           
+            return BadRequest();
         }
 
         // DELETE api/<OrderController>/5

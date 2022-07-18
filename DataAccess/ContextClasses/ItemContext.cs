@@ -30,5 +30,10 @@ namespace DataAccess.ContextClasses
         {
             return this.Item.AsEnumerable();
         }
+
+        public void AddItems(Item item)
+        {
+             this.Item.Add(item);
+        }
     }
 }
